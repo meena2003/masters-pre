@@ -8,4 +8,12 @@ public class Book {
         this.title = title;
         this.author = author;
     }
+
+    public void changeTitle(String title) {
+        this.title = title;
+    }
+
+    public void changeAuthor(String author) {
+        this.author = author;
+    }
 }
