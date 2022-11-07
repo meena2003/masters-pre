@@ -1,11 +1,11 @@
 package secondweek.mission1.problem2;
 
 public class Library {
-    private String title;
-    private String author;
+    private String name;
+    private Book[] bookshelf;
 
-    public Library(String title, String author) {
-        this.title = title;
-        this.author = author;
+    public Library(String name) {
+        this.name = name;
+        bookshelf = new Book[5];
     }
 }
