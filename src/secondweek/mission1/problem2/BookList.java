@@ -11,6 +11,10 @@ public class BookList {
         bookList = new Book[5];
     }
 
+    public void copyBookList(Book[] bookList) {
+        System.arraycopy(bookList, 0, this.bookList, 0, bookList.length);
+    }
+
     public void addBook(Book newBook) {
         if (index == bookList.length) {
             bookList = extendsBookArray();
