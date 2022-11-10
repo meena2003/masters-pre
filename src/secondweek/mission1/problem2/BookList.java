@@ -3,12 +3,21 @@ package secondweek.mission1.problem2;
 public class BookList {
     private String name;
     private Book[] bookList;
+
+    public Book[] getBookList() {
+        return bookList;
+    }
+
     private int index;
 
     public BookList(String name) {
         this.name = name;
         index = 0;
         bookList = new Book[5];
+    }
+
+    public void changesBookInfo(int index, String newTitle, String newAuthor) {
+
     }
 
     public void copyBookList(Book[] bookList) {
@@ -38,5 +47,6 @@ public class BookList {
             String author = book.getAuthor();
             System.out.printf("[%s|%s] ", title, author);
         }
+        System.out.println();
     }
 }
