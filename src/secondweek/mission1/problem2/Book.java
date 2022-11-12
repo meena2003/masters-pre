@@ -17,11 +17,11 @@ public class Book {
         this.author = author;
     }
 
-    public void changeTitle(String title) {
-        this.title = title;
+    public void editTitle(String newTitle) {
+        this.title = newTitle;
     }
 
-    public void changeAuthor(String author) {
-        this.author = author;
+    public void editAuthor(String newAuthor) {
+        this.author = newAuthor;
     }
 }
