@@ -1,7 +1,7 @@
 package secondweek.mission1.problem1;
 
 public class Problem1Test {
-    static String[] alphabetArray = new String[27];
+    static String[] alphabetArray = new String[26];
     public static void main(String[] args) {
         addAlphabets();
         printAlphabets();
