@@ -1,6 +1,6 @@
 package secondweek.mission1.problem2;
 
-public class Book {
+public class Book implements Cloneable {
     private String title;
     private String author;
 
@@ -23,5 +23,12 @@ public class Book {
 
     public void editAuthor(String newAuthor) {
         this.author = newAuthor;
+    }
+
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {}
+        return null;
     }
 }
