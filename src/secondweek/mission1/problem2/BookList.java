@@ -1,7 +1,5 @@
 package secondweek.mission1.problem2;
 
-import java.util.Arrays;
-
 public class BookList {
     private String name;
     private Book[] bookList;
@@ -37,7 +35,9 @@ public class BookList {
     }
 
     public void createSameBookList(Book[] bookList) {
-        this.bookList = bookList.clone(); // 깊은 복사
+        for (int i = 0; i < bookList.length; i++) {
+            this.bookList[i] = (Book) bookList[i].clone(); // 깊은 복사
+        }
         index = bookList.length;
     }
 
