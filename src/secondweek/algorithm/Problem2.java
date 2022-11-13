@@ -3,33 +3,70 @@ package secondweek.algorithm;
 import java.util.*;
 
 public class Problem2 {
-    public static void main(String[] args) {
+    static Stack<Integer> dollBasket = new Stack<>();
+    static int count = 0;
 
+    public static int solution(int[][] board, int[] moves) {
+        playGame(board, moves);
+        return count;
     }
 
-    public int solution(int[][] board, int[] moves) {
-        Stack<Integer> basket = new Stack<>();
-        int point;
-        int count = 0;
-
-        for (int i = 0; i < moves.length; i++) {
-            point = moves[i] - 1;
-            int j = 0;
-
-            while (j < board.length) {
-                if (board[j][point] != 0) {
-                    if (!basket.isEmpty() && basket.peek() == board[j][point]) {
-                        basket.pop();
-                        count += 2;
-                        break;
-                    }
-                    basket.push(board[j][point]);
-                    board[j][point] = 0;
-                    break;
-                }
-                j++;
+    private static void playGame(int[][] board, int[] moves) {
+        for (int move : moves) {
+            int doll = pickOneDoll(board, move);
+            if (doll == 0) {
+                continue;
             }
+            saveDollToBasket(doll);
         }
-        return count;
+    }
+
+    private static int pickOneDoll(int[][] board, int move) {
+        int doll = 0;
+        for (int i = 0; i < board.length; i++) {
+            int position = board[i][move - 1];
+            if (position == 0) {
+                continue;
+            }
+            doll = position;
+            board[i][move - 1] = 0;
+            break;
+        }
+        return doll;
+    }
+
+    private static void saveDollToBasket(int doll) {
+        if (isEmpty(doll)) {
+            return;
+        }
+        if (popDolls(doll)) {
+            return;
+        }
+        addDoll(doll);
+    }
+
+    private static boolean popDolls(int doll) {
+        if (dollBasket.peek() == doll) {
+            dollBasket.pop();
+            count += 2;
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean isEmpty(int doll) {
+        if (dollBasket.isEmpty()) {
+            dollBasket.push(doll);
+            return true;
+        }
+        return false;
+    }
+
+    private static void addDoll(int doll) {
+        dollBasket.push(doll);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(solution(new int[][]{{0, 0, 0, 0, 0}, {0, 0, 1, 0, 3}, {0, 2, 5, 0, 1}, {4, 2, 4, 4, 2}, {3, 5, 1, 3, 1}}, new int[]{1, 5, 3, 5, 1, 2, 1, 4}));
     }
 }
