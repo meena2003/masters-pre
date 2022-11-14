@@ -1,19 +1,18 @@
 package thirdweek.mission1.problem1;
 
-public class RED extends Member {
-
+public class PLATINUM extends Member {
     @Override
     public int applyDiscountRate(int shoppingAmount) {
-        return shoppingAmount;
+        return shoppingAmount - (int) (shoppingAmount * 0.05);
     }
 
     @Override
     public int applyPointEarningRage(int shoppingAmount) {
-        return (int) (shoppingAmount * 0.01);
+        return (int) (shoppingAmount * 0.05);
     }
 
     @Override
     public int calculateParkingFee(int stayingHour) {
-        return stayingHour * 3000;
+        return stayingHour * 1000;
     }
 }
