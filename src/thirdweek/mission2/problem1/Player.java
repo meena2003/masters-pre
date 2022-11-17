@@ -4,9 +4,9 @@ public class Player {
     private String id;
     private PlayerLevel playerLevel;
 
-    public Player(String id, PlayerLevel playerLevel) {
+    public Player(String id) {
         this.id = id;
-        this.playerLevel = playerLevel;
+        this.playerLevel = new BeginnerLevel();
     }
 
     public PlayerLevel getPlayerLevel() {

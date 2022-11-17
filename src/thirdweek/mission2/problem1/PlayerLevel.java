@@ -6,6 +6,7 @@ abstract class PlayerLevel {
     protected abstract void turn();
     protected abstract void showLevelMessage();
     protected void go(int time) {
+        showLevelMessage();
         run();
         for (int i = 0; i < time; i++) {
             jump();

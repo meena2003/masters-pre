@@ -18,7 +18,7 @@ public class BeginnerLevel extends PlayerLevel {
 
     @Override
     protected void showLevelMessage() {
-        System.out.println("Beginner Level 입니다.");
+        System.out.println("***** 초급자 레벨 입니다 *****");
     }
 
     private void test() {
