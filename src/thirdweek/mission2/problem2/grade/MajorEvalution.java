@@ -1,4 +1,4 @@
-package thirdweek.mission2.problem2;
+package thirdweek.mission2.problem2.grade;
 
 public class MajorEvalution implements GradeEvaluation {
     @Override

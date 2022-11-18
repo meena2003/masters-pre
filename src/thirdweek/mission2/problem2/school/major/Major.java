@@ -1,4 +1,4 @@
-package thirdweek.mission2.problem2;
+package thirdweek.mission2.problem2.school.major;
 
 public abstract class Major {
     protected String majorName;

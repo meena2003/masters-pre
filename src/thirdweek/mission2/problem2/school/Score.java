@@ -1,4 +1,9 @@
-package thirdweek.mission2.problem2;
+package thirdweek.mission2.problem2.school;
+
+import thirdweek.mission2.problem2.grade.BasicEvaluation;
+import thirdweek.mission2.problem2.grade.GradeEvaluation;
+import thirdweek.mission2.problem2.grade.MajorEvalution;
+import thirdweek.mission2.problem2.grade.PassOrFailEvaluation;
 
 import java.util.HashMap;
 
@@ -14,6 +19,8 @@ public class Score {
         int score = getScore(subjectName);
         if (compulsorySubject.equals(subjectName)) {
             gradeEvaluation = new MajorEvalution();
+        } else if (subjectName.equals(String.valueOf(SubjectName.방송댄스))) {
+            gradeEvaluation = new PassOrFailEvaluation();
         } else {
             gradeEvaluation = new BasicEvaluation();
         }
@@ -29,7 +36,10 @@ public class Score {
     }
 
     public int getScore(String subjectName) {
-        return subjectScores.get(subjectName);
+        if (subjectScores.containsKey(subjectName)) {
+            return subjectScores.get(subjectName);
+        }
+        return -1;
     }
 
 }

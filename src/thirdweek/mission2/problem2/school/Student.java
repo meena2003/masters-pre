@@ -1,4 +1,8 @@
-package thirdweek.mission2.problem2;
+package thirdweek.mission2.problem2.school;
+
+import thirdweek.mission2.problem2.school.major.ComputerEngineeringMajor;
+import thirdweek.mission2.problem2.school.major.KoreanAndLiteratureMajor;
+import thirdweek.mission2.problem2.school.major.Major;
 
 public class Student {
     private String studentName;
@@ -6,7 +10,7 @@ public class Student {
     private Major major;
     private Score score;
 
-    public Student(String studentName, String studentId, String majorName, int ... scores) {
+    public Student(String studentName, String studentId, String majorName, int... scores) {
         this.studentName = studentName;
         this.studentId = studentId;
         getMajorInstance(majorName);
@@ -14,7 +18,7 @@ public class Student {
     }
 
     // 'Score' 인스턴스 생성한 후, Scores의 HashMap에 점수들을 저장
-    private void getScoreInstance(int ... scores) {
+    private void getScoreInstance(int... scores) {
         score = new Score();
         score.setScores(scores);
     }
