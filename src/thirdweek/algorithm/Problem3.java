@@ -53,7 +53,6 @@ public class Problem3 {
                         .collect(joining(" "))
                         + "\n"
         );
-
         bufferedReader.close();
         bufferedWriter.close();
     }
