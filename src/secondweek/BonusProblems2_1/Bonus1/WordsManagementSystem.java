@@ -1,9 +1,43 @@
 package secondweek.BonusProblems2_1.Bonus1;
 
-public class WordsManagementSystem {
-    // 낱말을 저장하는 Stack 변수
+import java.util.*;
 
-    // 새로 들어온 입력값과 기존에 저장된 낱말과 비교하는 메서드
-    // 이미 있는 List에 중복된지 체크하는 메서드
-    // 들어온 입력값을 Stack에 저장하는 메서드
+public class WordsManagementSystem {
+    public static final String FIRST_WORD = "기러기";
+    private Stack<String> wordsStack;
+    private List<String> wordsList;
+
+    public WordsManagementSystem() {
+        wordsStack = new Stack<>();
+        wordsStack.push(FIRST_WORD);
+        wordsList = new ArrayList<>();
+        wordsList.add(FIRST_WORD);
+    }
+
+    public boolean compareWord(String nextWord) {
+        String lastCharacterOfPreWord = wordsStack.peek().substring(wordsStack.peek().length() - 1);
+        String firstCharacterOfNextWord = nextWord.substring(0, 1);
+        if (lastCharacterOfPreWord.equals(firstCharacterOfNextWord)) {
+            wordsStack.push(nextWord);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isDuplicatedWord(String nextWord) {
+        if (wordsList.contains(nextWord)) {
+            System.out.println("중복 단어를 입력했습니다.");
+            return false;
+        }
+        wordsList.add(nextWord);
+        return true;
+    }
+
+    public boolean isOneCharacter(String nextWord) {
+        if (nextWord.length() == 1) {
+            System.out.println("한 글자는 단어가 아닙니다.");
+            return false;
+        }
+        return true;
+    }
 }
