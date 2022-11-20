@@ -1,6 +1,6 @@
 package thirdweek.mission1.problem2;
 
-public class WhippedCream extends Mocha {
+public class WhippedCream extends AddOptionDecorator {
     public WhippedCream(Coffee decoratedCoffee) {
         super(decoratedCoffee);
     }

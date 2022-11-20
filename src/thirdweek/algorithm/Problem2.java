@@ -32,7 +32,6 @@ class Result {
 
         return answer;
     }
-
 }
 
 public class Problem2 {
