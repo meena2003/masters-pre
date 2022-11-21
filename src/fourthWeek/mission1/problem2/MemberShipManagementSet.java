@@ -4,11 +4,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class MemberShipManagementList {
+public class MemberShipManagementSet {
     private final String LINE = "===================================\n";
     private Set<Customer> memberShipManagement;
 
-    public MemberShipManagementList() {
+    public MemberShipManagementSet() {
         this.memberShipManagement = new HashSet<>();
     }
 

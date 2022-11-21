@@ -2,7 +2,7 @@ package fourthWeek.mission1.problem2;
 
 public class Application {
     public static void main(String[] args) {
-        MemberShipManagementList management = new MemberShipManagementList();
+        MemberShipManagementSet management = new MemberShipManagementSet();
         management.addMemberShip("Hong", GRADE.RED);
         management.addMemberShip("Park", GRADE.DIAMOND);
         management.addMemberShip("Kim", GRADE.PLATINUM);
