@@ -9,23 +9,22 @@ public class Application {
         RED red = new RED();
         PLATINUM platinum = new PLATINUM();
         DIAMOND diamond = new DIAMOND();
+        MemberShipManagementList management = new MemberShipManagementList();
+        management.addMemberShip("Hong", GRADE.RED);
+        management.addMemberShip("Park", GRADE.DIAMOND);
+        management.addMemberShip("Kim", GRADE.PLATINUM);
 
-        Customer james = new Customer("James", red, 10000, 2);
-        Customer tomas = new Customer("Tomas", red, 30000, 2);
-        Customer edward = new Customer("Edward", platinum, 10000, 2);
-        Customer percy = new Customer("Percy", platinum, 30000, 2);
-        Customer elizabet = new Customer("Elizabet", diamond, 30000, 2);
+        System.out.println("모든 멤버 보여주기: ");
+        management.showAllMember();
 
-        List<Customer> customerList = new ArrayList<>(Arrays.asList(james, tomas, edward, percy, elizabet));
-        printAllCustomersInfo(customerList);  // 모든 고객 정보 열람
+        System.out.println("존재 하는 아이디를 지웠을때 :");
+        if(management.removeMember(1001)) {
+            management.showAllMember();
+        }
 
-        james.callCounselor(); // 일반 상담원 호출
-        elizabet.callCounselor(); // VIP 전문 상담원 호출
-    }
-
-    public static void printAllCustomersInfo(List<Customer> customerList) {
-        for (Customer customer : customerList) {
-            System.out.println(customer.showCustomerInfo());
+        System.out.println("존재 하지 않는 아이디를 지우려 할때:");
+        if(management.removeMember(1005)) {
+            management.showAllMember();
         }
     }
 }
