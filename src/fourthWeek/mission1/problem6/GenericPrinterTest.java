@@ -1,4 +1,4 @@
-package fourthWeek.mission1.Problem6;
+package fourthWeek.mission1.problem6;
 
 public class GenericPrinterTest {
     public static void main(String[] args) {

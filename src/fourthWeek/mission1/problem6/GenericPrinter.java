@@ -1,4 +1,4 @@
-package fourthWeek.mission1.Problem6;
+package fourthWeek.mission1.problem6;
 
 public class GenericPrinter<T extends Material> {
     private T t;

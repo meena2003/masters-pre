@@ -5,10 +5,6 @@ import java.util.NoSuchElementException;
 
 public class Heap<E> {
 
-    private final Comparator<? super E> comparator;
-    private static final int DEFAULT_CAPACITY = 10;
-
-    private int size;
 
     private Object[] array;
 
@@ -107,8 +103,8 @@ public class Heap<E> {
         }
 
         E rootNode = (E) array[0];
-        E target = (E) array[size];
-        array[size] = null;
+        E target = (E) array[size - 1];
+        array[size - 1] = null;
 
         shipDown(0, target);
 
@@ -121,7 +117,7 @@ public class Heap<E> {
             shipDownComparator(index, target, comparator);
             return;
         }
-
+        siftDownComparable(index, target);
     }
 
     private void shipDownComparator(int index, E target, Comparator<? super E> comp) {
@@ -181,5 +177,21 @@ public class Heap<E> {
         if (array.length > DEFAULT_CAPACITY && size < array.length / 4) {
             resize(Math.max(DEFAULT_CAPACITY, array.length / 2));
         }
+    }
+
+    public void printHeap() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Min Heap : ");
+        for (Object element : array) {
+            if (element == null) {
+                continue;
+            }
+            sb.append("[" + (E) element + "] ");
+        }
+        System.out.println(sb);
+    }
+
+    public int getHeapSize() {
+        return size;
     }
 }
