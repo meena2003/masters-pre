@@ -21,7 +21,8 @@ public class HeapSort {
         }
 
         System.out.println();
-        System.out.println("===================================");
+        System.out.println();
+        System.out.println("=========================================");
         System.out.println();
 
         Heap maxHeap = new Heap(new MaxHeapify());
