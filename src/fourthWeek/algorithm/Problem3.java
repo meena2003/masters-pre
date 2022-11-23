@@ -2,10 +2,11 @@ package fourthWeek.algorithm;
 
 class Problem3 {
     public static void main(String[] args) {
-        System.out.println(isPalindrome(0));
+        System.out.println("-12321".length());
+        System.out.println(isPalindrome(-12321));
     }
     public static boolean isPalindrome(int x) {
-        if (x <= 0) {
+        if (x < 0) {
             return false;
         }
         int halfLength = String.valueOf(x).length() / 2;
